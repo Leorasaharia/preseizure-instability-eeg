@@ -1,1 +1,50 @@
+## 📊 Dataset
+
+This project uses the **CHB-MIT Scalp EEG Database**, a widely used, clinically validated dataset for epilepsy research, published by **John Guttag (MIT)** and hosted on **PhysioNet**.
+
+### Dataset Overview
+- EEG recordings from **22 pediatric subjects** with intractable epilepsy
+- Collected at **Children’s Hospital Boston**
+- Subjects monitored for several days following withdrawal of anti-seizure medication
+- **182 expert-annotated seizures** with precise onset and offset times
+- Continuous scalp EEG recordings sampled at **256 Hz**
+- Electrode placement follows the **International 10–20 system**
+
+### Data Structure
+- Recordings are organized into **23 cases** (`chb01`, `chb02`, …)
+- Each case contains **9–42 EDF files** from a single subject
+- Files are typically **1 hour long** (some are 2–4 hours)
+- Seizure intervals are provided via accompanying **`.edf.seizures` annotation files**
+- Files listed in `RECORDS-WITH-SEIZURES` contain one or more seizures
+
+### Signal Characteristics
+- 16-bit resolution EEG signals
+- Most recordings contain **23 EEG channels**
+- Additional signals (e.g., ECG, VNS) are present in select cases
+- All protected health information (PHI) has been removed or anonymized
+
+### Dataset Access
+The dataset is publicly available under the **Open Data Commons Attribution License v1.0** and can be accessed from:
+
+https://physionet.org/content/chbmit/1.0.0/
+
+Access requires agreeing to PhysioNet’s data usage terms.
+
+---
+
+### Citation
+If using this dataset, please cite:
+
+> Guttag, J. (2010). *CHB-MIT Scalp EEG Database (version 1.0.0).* PhysioNet.  
+> https://doi.org/10.13026/C2K01R
+
+Additionally, please cite the original work:
+
+> Shoeb, A. (2009). *Application of Machine Learning to Epileptic Seizure Onset Detection and Treatment.*  
+> PhD Thesis, Massachusetts Institute of Technology.
+
+And the PhysioNet resource:
+
+> Goldberger, A. L., et al. (2000). *PhysioBank, PhysioToolkit, and PhysioNet.*  
+> Circulation, 101(23), e215–e220.
 
