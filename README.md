@@ -124,8 +124,9 @@ The following results were generated from `eeg_neural_instability.ipynb`:
 
 * Identifies which extracted features contribute most to instability detection
 * Useful for future feature pruning and model optimization
-<img width="770" height="816" alt="image" src="https://github.com/user-attachments/assets/0b678112-d11e-4a94-b070-27a2b5b829c9" />
-<img width="872" height="393" alt="image" src="https://github.com/user-attachments/assets/9c3c18f7-155f-4024-9253-715ab6ffe2b6" />
+<img width="556" height="435" alt="image" src="https://github.com/user-attachments/assets/73a09c01-0170-41a8-93d3-bd25839b0070" />
+<img width="691" height="393" alt="image" src="https://github.com/user-attachments/assets/570e2901-a533-480f-a2e4-3ee943ee59a4" />
+
 
 
 > These outcomes support the hypothesis that seizures are preceded by measurable instability rather than abrupt onset.
