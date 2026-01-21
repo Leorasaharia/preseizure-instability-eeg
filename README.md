@@ -107,7 +107,8 @@ The following results were generated from `eeg_neural_instability.ipynb`:
 
 * Focused visualization around seizure onset
 * Clear increase in signal intensity and irregularity
-<img width="556" height="435" alt="image" src="https://github.com/user-attachments/assets/46af1c85-bfda-4f4a-a6b3-92605eb81dfa" />
+<img width="770" height="816" alt="image" src="https://github.com/user-attachments/assets/6525f19e-691f-4f0e-af6a-2d4686bde5da" />
+
 
 
 ### 3️⃣ Early‑Warning Neural Instability Trend
@@ -115,7 +116,8 @@ The following results were generated from `eeg_neural_instability.ipynb`:
 * **Baseline vs Pre‑Seizure comparison**
 * Observable deviation in instability metric **before** seizure onset
 * Indicates presence of early neural destabilization
-<img width="691" height="393" alt="image" src="https://github.com/user-attachments/assets/3ff959ff-8030-4179-979c-e731e8c8f875" />
+<img width="872" height="393" alt="image" src="https://github.com/user-attachments/assets/1b4b76ad-ddcb-43a3-92d6-760140a38465" />
+
 
 
 ### 4️⃣ Feature Importance (Early‑Warning Signals)
