@@ -1,89 +1,220 @@
-# Early-Warning Signals of Neural Instability from EEG
+# Pre‑Seizure Neural Instability Detection using EEG
 
-This project investigates whether **neural time-series signals exhibit early-warning indicators of instability prior to epileptic seizure onset**, inspired by concepts from **dynamical systems theory** rather than black-box classification.
-
-Unlike conventional EEG studies that focus on seizure detection, this work explores **pre-seizure brain dynamics** using **interpretable statistical features**.
+> **A research‑oriented project exploring early‑warning neural instability patterns prior to epileptic seizures using EEG signal analysis and machine learning, paired with an interactive web frontend.**
 
 ---
 
-## 🧠 Motivation
+## 📂 Repository Structure & Branching
 
-Complex systems approaching a critical transition often show characteristic warning signs, including:
+This repository intentionally uses **two branches** to clearly separate research and deployment concerns:
 
-- Increased signal variance
-- Rising autocorrelation
-- Slower recovery from perturbations (critical slowing down)
+### 🔹 `main` branch — *Research & Model Development*
 
-This project examines whether such phenomena appear in **scalp EEG recordings** before seizures, providing insight into **neural instability rather than event detection**.
+Contains everything related to **data analysis, signal processing, model training, and results generation**.
 
----
+**Key contents:**
 
-## 📊 Dataset
+* `eeg_neural_instability.ipynb` — Google Colab notebook used for:
 
-**CHB-MIT Scalp EEG Database**  
-- 23 pediatric epilepsy patients  
-- Multi-channel scalp EEG  
-- Sampling rate: 256 Hz  
-- Expert-annotated seizure onsets  
+  * EEG signal loading & preprocessing (EDF files)
+  * Feature extraction
+  * Neural instability metric computation
+  * Baseline vs pre‑seizure comparison
+  * Visualization of early‑warning signals
+* `dataset/`
 
-Dataset source:  
-https://physionet.org/content/chbmit/1.0.0/
+  * Includes EEG dataset files and a **dataset README** describing the source, format, and usage
+* `*.edf.seizures` — Sample EEG seizure recordings used in experiments
 
----
-
-## ⚙️ Methodology
-
-1. **EEG Loading & Preprocessing**
-   - EDF file reading using MNE
-   - Bandpass filtering (1–40 Hz)
-   - Channel normalization
-
-2. **Window-Based Feature Extraction**
-   - Sliding temporal windows
-   - Computation of early-warning metrics:
-     - Variance
-     - Lag-1 autocorrelation
-     - Recovery time estimates
-
-3. **Comparative Analysis**
-   - Pre-seizure windows vs baseline EEG
-   - Statistical testing (Welch’s t-test)
-   - Interpretable machine learning for feature relevance
-
-4. **Visualization**
-   - Temporal feature trends
-   - Feature importance plots
-   - Raw EEG visualization around seizure onset
+👉 **Use this branch if you are interested in the ML / signal‑processing research.**
 
 ---
 
-## 📈 Key Findings
+### 🔹 `master` branch — *Frontend & Deployment*
 
-- Early-warning features increase significantly prior to seizure onset  
-- Pre-seizure EEG exhibits measurable instability patterns  
-- Statistical tests confirm strong separation between baseline and pre-seizure states  
+Contains the **React + Vite frontend** used to present the project concept, visuals, and outcomes.
 
-These results support the hypothesis that **EEG signals encode early instability markers**, offering insight beyond seizure detection.
+**Key contents:**
 
----
+* `src/`, `public/` — Frontend source code
+* TailwindCSS configuration
+* Vite configuration
+* Optimized production build
 
-## 🧪 Tools & Libraries
+🌐 **Live Deployment:**
 
-- Python  
-- MNE  
-- NumPy  
-- SciPy  
-- Pandas  
-- Matplotlib  
+* **Vercel App:** [https://preseizure-instability-eeg.vercel.app](https://preseizure-instability-eeg.vercel.app)
+
+👉 **Use this branch if you are interested in the UI, presentation, or demo.**
 
 ---
 
-## 🗂 Repository Structure
+## 🧠 Research Objective
 
-```text
-├── data/
-│   └── chbmit_data/
-├── notebooks/
-│   └── eeg_instability_analysis.ipynb
-├── frontend files
-└── README.md
+Epileptic seizures are often preceded by subtle but measurable changes in neural dynamics. This project investigates whether **EEG‑derived instability metrics** can act as **early‑warning indicators** before seizure onset.
+
+The goal is **not seizure classification**, but **pre‑seizure instability detection**, which is crucial for:
+
+* Preventive alert systems
+* Neuro‑monitoring research
+* Future closed‑loop intervention systems
+
+---
+
+## ⚙️ Methodology (Research Branch)
+
+1. **EEG Data Acquisition**
+
+   * Multi‑channel EEG signals (EDF format)
+   * Seizure‑annotated recordings
+
+2. **Preprocessing**
+
+   * Channel selection
+   * Noise handling
+   * Windowed signal segmentation
+
+3. **Feature Extraction**
+
+   * Time‑domain statistical features
+   * Signal variability & instability measures
+
+4. **Neural Instability Metric**
+
+   * Computed over sliding windows
+   * Compared between baseline and pre‑seizure periods
+
+5. **Visualization & Analysis**
+
+   * Raw EEG signal plots
+   * Zoomed seizure windows
+   * Temporal instability trends
+   * Feature importance analysis
+
+---
+
+## 📊 Outcomes & Visual Results
+
+The following results were generated from `eeg_neural_instability.ipynb`:
+
+### 1️⃣ Raw EEG Signal Visualization
+
+* Multi‑channel EEG traces plotted over long durations
+* Highlights the complexity and non‑stationary nature of neural signals
+<img width="770" height="793" alt="image" src="https://github.com/user-attachments/assets/585339d3-02b8-458d-84a3-f96a720bf5d6" />
+
+### 2️⃣ Seizure Window Zoom‑In
+
+* Focused visualization around seizure onset
+* Clear increase in signal intensity and irregularity
+<img width="556" height="435" alt="image" src="https://github.com/user-attachments/assets/46af1c85-bfda-4f4a-a6b3-92605eb81dfa" />
+
+
+### 3️⃣ Early‑Warning Neural Instability Trend
+
+* **Baseline vs Pre‑Seizure comparison**
+* Observable deviation in instability metric **before** seizure onset
+* Indicates presence of early neural destabilization
+<img width="691" height="393" alt="image" src="https://github.com/user-attachments/assets/3ff959ff-8030-4179-979c-e731e8c8f875" />
+
+
+### 4️⃣ Feature Importance (Early‑Warning Signals)
+
+* Identifies which extracted features contribute most to instability detection
+* Useful for future feature pruning and model optimization
+<img width="770" height="816" alt="image" src="https://github.com/user-attachments/assets/0b678112-d11e-4a94-b070-27a2b5b829c9" />
+<img width="872" height="393" alt="image" src="https://github.com/user-attachments/assets/9c3c18f7-155f-4024-9253-715ab6ffe2b6" />
+
+
+> These outcomes support the hypothesis that seizures are preceded by measurable instability rather than abrupt onset.
+
+---
+
+## 🧪 Dataset Information
+
+Detailed dataset documentation is available inside:
+
+```
+dataset/README.md
+```
+
+It includes:
+
+* Dataset source
+* File format (EDF)
+* Channel details
+* Seizure annotation notes
+* Ethical and academic usage disclaimer
+
+---
+
+## 🖥️ Frontend Overview (Master Branch)
+
+The frontend serves as a **research showcase layer**, not a medical diagnostic tool.
+
+**Features:**
+
+* Clean research‑focused UI
+* Explanation of the project concept
+* Visual emphasis on EEG instability analysis
+* Deployed using Vercel
+
+**Tech Stack:**
+
+* React + Vite
+* Tailwind CSS
+* JavaScript
+
+---
+
+## 🚀 How to Use
+
+### Research / Notebook
+
+1. Switch to `main` branch
+2. Open `eeg_neural_instability.ipynb` in Google Colab
+3. Upload dataset files if required
+4. Run cells sequentially
+
+### Frontend
+
+1. Switch to `master` branch
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+3. Start development server:
+
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## ⚠️ Disclaimer
+
+This project is **for academic and research purposes only**.
+It is **not a medical device** and should not be used for clinical diagnosis or treatment.
+
+---
+
+## 📌 Future Scope
+
+* Larger patient‑wise validation
+* Deep learning‑based temporal modeling
+* Real‑time EEG streaming
+* Integration with wearable EEG hardware
+* Closed‑loop seizure prevention research
+
+---
+
+## 👤 Author
+
+**Leora Saharia**
+Biomedical Engineering
+
+---
+
+If you're evaluating this from a **research, biomedical AI, or neuro‑engineering perspective**, start with the **`main` branch**.
+If you're evaluating it from a **product, demo, or presentation perspective**, start with the **`master` branch**.
